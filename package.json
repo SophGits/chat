@@ -10,6 +10,10 @@
     "socket.io" : "0.9.6",
     "connect"   : "1.9.2"
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "git@github.com:SophGits/chat.git"
+  },
   "author": "Sophie Chitty",
   "license": "ISC"
 }
