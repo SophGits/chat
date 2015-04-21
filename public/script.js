@@ -9,4 +9,18 @@ $(document).ready(function () {
   socket.on('entrance', function  (data) {
     log_chat_message(data.message);
   });
+
+  $('#chat_box').keypress(function (event) {
+    if (event.which == 13) {
+      // emits event just for this socket
+      socket.emit('speak', {message: $('#chat_box').val()});
+      $('#chat_box').val('');
+    }
+  });
+
+  socket.on('speak', function  (data) {
+    log_chat_message(data.message);
+  });
+
+
 });
