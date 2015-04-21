@@ -1,8 +1,20 @@
 <html>
 <head>
   <title>Chat Room, by Sophie</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="jquery-1.11.2.min.js"></script>
+  <script src="script.js"></script>
+
 </head>
 <body>
+
+  <div id="chatroom">
+    <ul id="chat_log">
+    </ul>
+  </div>
+
+  <input type="text" name="chat_box" value="" id="chat_box" placeholder="type to chat..." />
 
 </body>
 </html>

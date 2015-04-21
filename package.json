@@ -2,7 +2,7 @@
   "name": "chat-room",
   "version": "0.0.0",
   "description": "Creating a chat room using socket.io",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
