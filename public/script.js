@@ -8,6 +8,5 @@ $(document).ready(function () {
 
   socket.on('entrance', function  (data) {
     log_chat_message(data.message);
-    console.log("CONNECTED");
   });
 });
