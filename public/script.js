@@ -13,7 +13,16 @@ $(document).ready(function () {
     $('#chat_log').append(li);
   };
 
-  var socket = io.connect('http://localhost:3000');
+  function getHost(){
+    var host = window.location.host;
+    if(host.indexOf('localhost') >= 0){
+     return 'http://localhost:3000';
+    } else {
+      return 'http://sophgits.github.io/chat'
+    }
+  }
+
+  var socket = io.connect(getHost());
 
   socket.on('entrance', function(data) {
     log_chat_message(data.message, 'enter');
@@ -35,6 +44,5 @@ $(document).ready(function () {
   socket.on('disconnect', function(data) {
     log_chat_message(data.message, 'disconnect');
   });
-
 
 });
