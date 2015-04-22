@@ -1,7 +1,7 @@
 var io = require('socket.io'),
     connect = require('connect');
 
-var app = connect().use(connect.static('public')).listen(3000 || process.env.PORT);
+var app = connect().use(connect.static('public')).listen(process.env.PORT || 3000);
 var room = io.listen(app);
 
 room.sockets.on('connection', function(socket){
