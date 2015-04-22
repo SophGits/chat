@@ -14,5 +14,9 @@ room.sockets.on('connection', function(socket){
     room.sockets.emit('speak', {message: '- ' + data.message});
   });
 
+  socket.on('disconnect', function(){
+    room.sockets.emit('disconnect', {message: 'Connection terminated'});
+  });
+
 });
 

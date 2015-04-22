@@ -1,19 +1,29 @@
 div#chatroom {
   display: block;
-  height: 300px;
+  height: 400px;
   border: 1px solid #999;
-  overflow: auto;
   width: 100%;
   margin-bottom: 10px;
   position: relative;
+  overflow: hidden;
 }
-
+div.log-container{
+  /*border: 1px dotted blue;*/
+  height: 100%;
+  /*overflow: scroll;*/
+}
 ul#chat_log {
-  list-style: none;
   position: absolute;
   bottom: 0px;
+  /*height: auto;*/
+  /*border: 1px dotted red;*/
+  list-style: none;
 }
-
+.log-container:after{
+  clear: both;
+  content: "";
+  display: block;
+}
 input#chat_box {
   width: 99%;
 }
