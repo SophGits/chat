@@ -18,7 +18,7 @@ $(document).ready(function () {
     if(host.indexOf('localhost') >= 0){
      return 'http://localhost:3000';
     } else {
-      return 'http://chat-app-sc.herokuapp.com'
+      return process.env.PORT
     }
   }
 
