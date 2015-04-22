@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   var log_chat_message = function(message, type) {
     var li = $('<li />').text(message);
 
@@ -28,10 +29,14 @@ $(document).ready(function () {
     log_chat_message(data.message, 'enter');
   });
 
-  $('#chat_box').keypress(function(event) {
-    if (event.which == 13) {
+  $('#chat_box').keypress(function(e) {
+    if (e.which == 13) {
       // emits event just for this socket
-      socket.emit('speak', {message: $('#chat_box').val()});
+      if(!!socket.username){
+        socket.emit('speak', {message: socket.username + ': ' + $('#chat_box').val()});
+      } else {
+        socket.emit('speak', {message: $('#chat_box').val()});
+      }
       $('#chat_box').val('');
     }
   });
@@ -43,6 +48,10 @@ $(document).ready(function () {
 
   socket.on('disconnect', function(data) {
     log_chat_message(data.message, 'disconnect');
+  });
+
+  $('#username').keypress(function(e){
+    return socket.username = $('#username').val();
   });
 
 });
