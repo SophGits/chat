@@ -36,6 +36,21 @@ input#username{
   font-size: 20px;
   line-height: 18px;
   border: 2px solid gray;
+  color: gray;
   padding: 5px;
   z-index: 20;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    gray;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    gray;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    gray;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    gray;
 }

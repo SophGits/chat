@@ -4,11 +4,11 @@ $(document).ready(function () {
     var li = $('<li />').text(message);
 
     if (type === 'enter') {
-      li.css({'color': 'red'});
+      li.css({'color': 'crimson'});
     } else if (type === 'speak') {
       li.css({'color': 'blue'});
     } else if (type === 'disconnect') {
-      li.css({'font-weight': 'bold', 'color': '#B30'});
+      li.css({'font-weight': 'bold', 'color': 'darkorange'});
     }
 
     $('#chat_log').append(li);
@@ -22,7 +22,6 @@ $(document).ready(function () {
       return host
     }
   }
-
   var socket = io.connect(getHost());
 
   socket.on('entrance', function(data) {
@@ -41,17 +40,17 @@ $(document).ready(function () {
     }
   });
 
-  socket.on('speak', function(data) {
+  socket.on('speak', function(data){
     log_chat_message(data.message, 'speak');
   });
 
-
-  socket.on('disconnect', function(data) {
+  socket.on('disconnect', function(data){
     log_chat_message(data.message, 'disconnect');
   });
 
-  $('#username').keypress(function(e){
+  $('#username').keyup(function(){
     return socket.username = $('#username').val();
   });
 
 });
+

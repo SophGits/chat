@@ -1,6 +1,9 @@
 var io = require('socket.io'),
     connect = require('connect');
 
+      var debug = require('debug')('http');
+  var http = require('http');
+
 var app = connect().use(connect.static('public')).listen(process.env.PORT || 3000);
 var room = io.listen(app);
 
